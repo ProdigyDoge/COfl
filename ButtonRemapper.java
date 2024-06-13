@@ -336,3 +336,33 @@ public class ButtonRemapper {
     }
 
 }
+
+//The provided code defines a ButtonRemapper class that interacts with the graphical user interface (GUI) of Minecraft, specifically dealing with auction and purchase confirmation screens within the game. It uses various Minecraft Forge and reflection techniques to access and manipulate GUI elements. Here's an overview of its functionality:
+
+//Singleton Pattern: The ButtonRemapper class is implemented as a singleton, meaning only one instance of this class can exist. This is enforced by the getInstance method.
+
+//Reflection: The class uses reflection to access obfuscated methods in Minecraft's GUI classes. Specifically, it looks for methods drawItemStack and renderToolTip in GuiContainer and GuiScreen classes, respectively.
+
+//GUI Interaction:
+
+//getItem: Retrieves an item from a specified slot in the GuiChest.
+//waitingForBed: Checks if the GUI is in a state where it's waiting for a specific item (a bed) to be available for purchase.
+//drawBoxWithShadow: Draws a rectangle with a shadow on the screen.
+//drawTfmBox: Draws a box with a title on the screen, indicating either "Confirm Purchase" or "Auction View".
+//renderTooltip: Displays a tooltip for an item at a specific location on the screen.
+//renderItem: Renders an item on the screen with a specified scale.
+//drawBuyBox: Draws a box that represents the area where the "Buy" button is located.
+//drawCancelBox: Draws a box that represents the area where the "Cancel" button is located.
+//drawProfitInfo: Displays information about the profit from the last clicked flip (related to the auction).
+//Event Handling:
+
+//onPostRenderEvent: Listens for post-render events to draw custom GUI elements when the screen is an auction or purchase confirmation screen.
+//onMouseClicked: Handles mouse click events to determine if the user clicked within the "Buy" or "Cancel" button areas and processes those clicks accordingly.
+//Click Handling:
+
+//handleBuyClick: Handles clicks on the "Buy" button in the auction view.
+//handleConfirmClick: Handles clicks on the "Confirm" button in the purchase confirmation view.
+//handlePositiveClick: Delegates to either handleBuyClick or handleConfirmClick based on the current screen.
+//doCancelClick: Handles clicks on the "Cancel" button in both auction and purchase confirmation views.
+//handleCancelClick: Delegates to doCancelClick based on the current screen.
+//The ButtonRemapper class is designed to enhance the user experience by automating certain interactions in the auction and purchase confirmation screens of Minecraft, making it easier and more efficient for users to participate in auctions and confirm purchases.
