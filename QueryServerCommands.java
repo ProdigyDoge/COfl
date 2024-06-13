@@ -141,3 +141,60 @@ public class QueryServerCommands {
 		return null;
 	}
 }
+
+//The provided code is a Java class QueryServerCommands that belongs to the package de.torui.coflsky.network. This class is designed to handle network communication with a remote server, specifically for querying and sending commands. Here's a detailed breakdown of its functionality:
+
+//Class Overview
+//Imports:
+//java.io.*, java.net.HttpURLConnection, java.net.URL: For handling network communication and input/output operations.
+//com.google.gson.Gson, com.google.gson.GsonBuilder: For parsing JSON data.
+//de.torui.coflsky.CoflSky, de.torui.coflsky.minecraft_integration.CoflSessionManager, de.torui.coflsky.minecraft_integration.PlayerDataProvider: Custom classes likely part of the CoflSky project, dealing with session management and player data in a Minecraft integration context.
+//Methods
+//QueryCommands()
+//Purpose: Sends a GET request to retrieve available commands from the server and formats the response.
+//Process:
+//Calls GetRequest(CoflSky.CommandUri) to send a GET request to the specified URI.
+//Parses the JSON response into an array of CommandInfo objects.
+//Constructs a formatted string of commands.
+//Returns the formatted string or an error message if the request fails.
+//CommandInfo (Nested Static Class)
+//Fields:
+//subCommand: The sub-command string.
+//description: Description of the sub-command.
+//Constructor: Initializes the fields.
+//toString() Method: Provides a string representation of the command information in the format "subCommand: description".
+//GetRequest(String uri)
+//Purpose: Sends a GET request to the specified URI and returns the response as a string.
+//Process:
+//Opens a connection to the given URL.
+//Sets request properties (e.g., Accept, User-Agent).
+//Reads the input stream from the connection.
+//Converts the input stream to a string and returns it.
+//Returns null if an exception occurs.
+//PostRequest(String uri, String data)
+//Purpose: Sends a POST request with the given data to the specified URI and returns the response as a string.
+//Process:
+//Retrieves the username using PlayerDataProvider.getUsername().
+//Opens a connection to the given URL.
+//Sets request properties (e.g., Content-Type, Accept, User-Agent, conId, uuid).
+//Writes the data to the output stream of the connection.
+//Reads the input stream from the connection.
+//Converts the input stream to a string and returns it.
+//Returns null if an exception occurs.
+//Usage and Workflow
+//QueryCommands(): Used to fetch and display commands available from the server.
+//GetRequest(): Helper method to perform GET requests.
+//PostRequest(): Helper method to perform POST requests with specific data, such as user session information.
+//Example Workflow
+//QueryCommands(): This method will be called to fetch commands from the server:
+
+//Sends a GET request to CoflSky.CommandUri.
+//Parses the JSON response into CommandInfo objects.
+//Formats and returns the commands.
+//PostRequest(): This method can be used to send data (e.g., player actions, session updates) to the server:
+
+//Sends a POST request with the provided data to the specified URI.
+//Reads and returns the response from the server.
+//Error Handling
+//Both GetRequest and PostRequest methods handle exceptions by printing stack traces and returning null in case of an error. This ensures the program does not crash and can provide feedback on connectivity issues.
+//This class is a utility for interacting with a server, particularly in a gaming or Minecraft modding context, allowing for dynamic command retrieval and data posting.
