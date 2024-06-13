@@ -415,3 +415,50 @@ public class BinGuiCurrent extends GuiChest {
         }
     }
 }
+
+//This code is part of a Minecraft mod that appears to provide a custom graphical user interface (GUI) for interacting with the "Buy It Now" (BIN) auction system in the game. The class BinGuiCurrent extends GuiChest, indicating it customizes the behavior of the chest GUI to fit its needs. Here's a breakdown of its functionality:
+
+//Key Features:
+//Custom GUI Rendering:
+
+//The class modifies the standard chest GUI to display custom elements like item details, a buy button, a cancel button, and item lore (descriptive text).
+//It provides methods to draw these elements on the screen, including rectangles, text, and item icons.
+//Handling Mouse and Keyboard Events:
+
+//The class listens for various events related to GUI actions, such as opening a GUI, drawing the screen, and mouse input.
+//It overrides the default behavior to insert custom logic, such as when the player attempts to buy an item or cancel the purchase.
+//Auction Interaction Logic:
+
+//The GUI handles the state of a purchase attempt using a BuyState enum with states like INIT, PURCHASE, CONFIRM, and BUYING.
+//It checks if an item is already bought and updates the GUI accordingly.
+//The class includes logic to interact with the Minecraft auction system, such as confirming purchases and handling item clicks.
+//Event Subscriptions:
+
+//It subscribes to various Minecraft Forge events (GuiOpenEvent, GuiScreenEvent, ClientChatReceivedEvent, TickEvent) to integrate seamlessly with the game's event system.
+//These event handlers manage GUI rendering, state updates, and user interactions.
+//Custom Item Handling:
+
+//The code includes methods to create custom item stacks, particularly for player skulls with specific textures, which are often used in Minecraft mods for cosmetic or functional purposes.
+//It retrieves item data and sets up item stacks to display within the GUI.
+//Detailed Breakdown:
+//Constructor: Initializes the GUI with player and chest inventories, sets up item stacks based on provided data, and registers event handlers.
+//shouldSkip: Determines if the GUI should skip rendering based on the current screen and game conditions.
+//onGuiOpen: Handles the opening of the GUI, replacing the standard chest GUI with the custom one if conditions are met.
+//onDrawGuiScreen: Custom rendering logic for the GUI, drawing the background, title, item icon, lore, and buttons.
+//drawScreen: Main method for drawing the custom elements on the screen.
+//getAlreadyBoughtText: Returns a formatted string indicating the buyer of the item.
+//onGuiMouseInput: Handles mouse wheel scrolling for the lore text.
+//resetGUI: Resets the GUI state, closing it and unregistering event handlers.
+//getItemByText: Utility method to get an item by its text ID.
+//getSkull: Utility method to create a player skull item stack with a custom texture.
+//onChatEvent: Listens for chat messages indicating the result of a purchase and resets the GUI accordingly.
+//getItem: Retrieves an item stack from a specific slot in the chest GUI.
+//waitingForBed: Checks if the auction item is not yet purchasable, based on item lore.
+//isAlreadyBought: Checks if an item is already bought by parsing its lore.
+//isMouseOverCancel: Determines if the mouse is over the cancel button.
+//isMouseOverAccept: Determines if the mouse is over the buy button.
+//isClicked: Checks if the mouse button was clicked.
+//onRenderEvent: Updates the mouse down state at the end of each render tick.
+//onMouseClicked: Cancels the default mouse click behavior if the custom GUI is rendered.
+//Usage Context:
+//This class is used within a Minecraft modding environment, specifically with Forge, to provide enhanced auction functionalities in the game. It enhances the user experience by offering a more informative and interactive interface for buying items in the BIN auction system, integrating seamlessly with the game's existing mechanics.
