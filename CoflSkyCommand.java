@@ -265,3 +265,93 @@ public class CoflSkyCommand extends CommandBase {
     }
 
 }
+
+//The provided code is a Minecraft mod class named CoflSkyCommand that extends CommandBase, allowing it to define custom commands that players can use in the game. Here’s a breakdown of what the code does:
+
+//Command Registration and Basic Information
+//Command Name and Aliases:
+
+//The command registered is cofl.
+//It has aliases: Cofl, coflnet, and cl.
+//Permission Level:
+
+//getRequiredPermissionLevel returns 0, meaning all players can use this command.
+//Command Usage Information:
+
+//getCommandUsage provides usage instructions, explaining available sub-commands.
+//Process Command
+//The processCommand method handles the logic for various sub-commands based on the arguments passed.
+
+//Sub-Commands
+//start:
+
+//Stops any existing connection and starts a new one.
+//Sends a message to the player indicating the connection is starting.
+//stop:
+
+//Stops the current connection.
+//Sends a chat message to the player with instructions on how to restart the connection.
+//debug:
+
+//Placeholder for debugging purposes, currently commented out.
+//callback:
+
+//Processes a callback command.
+//dev:
+
+//Toggles development mode by switching between a local server and the production server.
+//status:
+
+//Sends the current status of the connection and session to the player.
+//reset:
+
+//Resets all local session information and stops the connection.
+//connect:
+
+//Connects to a specified server.
+//Handles both URL and Base64 encoded destination strings.
+//openauctiongui:
+
+//Opens an auction GUI for a specified item or flip.
+//Handles GUI rendering and sending a chat message to view the auction.
+//setgui:
+
+//Changes the auction purchase GUI between different types (Cofl, TFM, Off).
+//Default:
+
+//Sends unrecognized commands to the server.
+//Helper Methods
+//HandleReset:
+
+//Sends a reset command, stops the connection, deletes all sessions, and restarts the connection.
+//StatusMessage:
+
+//Constructs a status message containing Java VM details, connection status, and session information.
+//SendCommandToServer:
+
+//Converts the command into a RawCommand and sends it to the server if the connection is active.
+//If not active, starts the connection first and then sends the command.
+//SendAfterStart:
+
+//Handles sending a message if the connection wasn’t initially active.
+//ListHelp:
+
+//Lists available commands and server commands to the player.
+//CallbackCommand:
+
+//Handles the execution and sending of callback commands.
+//Additional Classes and Methods
+//CommandType, JsonStringCommand, RawCommand:
+
+//Used for defining and processing various types of commands.
+//WSClient:
+
+//Handles WebSocket client operations.
+//QueryServerCommands:
+
+//Manages querying server commands.
+//MinecraftForge:
+
+//Registers or unregisters event handlers for custom GUIs.
+//Summary
+//The CoflSkyCommand class is designed to handle a variety of commands related to managing connections, toggling GUIs, handling auction interactions, and providing status updates within a Minecraft mod. It integrates with a WebSocket client to communicate with a server and processes commands accordingly.
