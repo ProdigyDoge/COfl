@@ -293,3 +293,55 @@ public class DescriptionHandler {
         tooltipItemIdMap.clear();
     }
 }
+
+// The DescriptionHandler class in this code is a part of the Minecraft mod, "CoflSky". It manages the display and modification of item tooltips in the Minecraft GUI. Below is a breakdown of its components and functionality:
+
+// Class Overview
+// Inner Classes:
+// InventoryWrapper: A wrapper to hold the chest name and inventory NBT data.
+// DescModification: Represents a modification to be made to an item's description, such as type, value, and line number.
+// Static Fields
+// allItemIds: A string representing all item IDs in the current inventory.
+// tooltipItemIdMap: A map that holds item IDs and their corresponding tooltip modifications.
+// EMPTY_ARRAY and EMPTY_COMPOUND: Constants representing empty values.
+// Instance Fields
+// IsOpen: Indicates if the handler is active.
+// shouldUpdate: Indicates if the description should be updated.
+// Methods
+// Close: Sets IsOpen to false, indicating that the handler should stop.
+
+// ExtractStackableIdFromItemStack(ItemStack stack):
+
+// Extracts a stackable ID from the item stack by checking its NBT tags.
+// ExtractIdFromItemStack(ItemStack stack):
+
+// Extracts the unique ID from an item stack. If no UUID is found, it falls back to ExtractStackableIdFromItemStack.
+// getTooltipData(ItemStack itemStack):
+
+// Retrieves the tooltip data for a given item stack. If the item ID is not found in tooltipItemIdMap, it marks shouldUpdate as true.
+// loadDescriptionAndListenForChanges(GuiOpenEvent event):
+
+// This method listens for changes in the inventory GUI and updates the description if any changes are detected. It checks for changes periodically while IsOpen is true.
+// hasAnyStackChanged(GuiContainer gc):
+
+// Compares current inventory IDs with allItemIds to detect any changes.
+// getCurrentInventoryIds(GuiContainer gc):
+
+// Constructs a string of all item IDs in the current inventory.
+// loadDescriptionForInventory(GuiOpenEvent event, GuiContainer gc, boolean skipLoadCheck):
+
+// Loads and processes the description for the inventory. It fetches the modifications from the server and updates tooltipItemIdMap.
+// waitForChestContentLoad(GuiOpenEvent event, GuiContainer gc):
+
+// Waits for the chest content to load by checking if the slots are populated.
+// setTooltips(ItemTooltipEvent event):
+
+// Sets the tooltips for the given item based on the modifications retrieved earlier. It supports various modification types like APPEND, REPLACE, INSERT, and DELETE.
+// highlightSlots(GuiScreenEvent.BackgroundDrawnEvent event):
+
+// Highlights slots in the GUI based on modifications of type "HIGHLIGHT". It uses reflection to access protected fields and highlights the slots with a specified color.
+// emptyTooltipData:
+
+// Clears the tooltip modification data from tooltipItemIdMap.
+// Summary
+// The DescriptionHandler class is responsible for dynamically modifying and updating the item tooltips in the inventory GUI of Minecraft. It listens for inventory changes, retrieves modification data from a server, and applies these modifications to item tooltips. Additionally, it can highlight specific slots in the inventory based on the received modification data. The class ensures that the displayed information is up-to-date and enhances the user's interaction with the inventory by providing enriched tooltips and visual cues.
