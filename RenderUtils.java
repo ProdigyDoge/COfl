@@ -365,3 +365,53 @@ public class RenderUtils {
         GL11.glRotatef(angle, 0.0F, 0.0F, 1.0F);
     }
 }
+
+//This Java class RenderUtils provides a collection of static methods that utilize LWJGL (Lightweight Java Game Library) and Minecraft's rendering capabilities to draw various graphical elements on the screen. Here’s an overview of its functionalities:
+
+//Class Overview
+//RenderUtils Class
+//Imports:
+
+//net.minecraft.client.Minecraft: Provides access to the Minecraft client instance.
+//net.minecraft.client.gui.FontRenderer: Allows rendering text.
+//net.minecraft.client.renderer.RenderItem: Renders items (like ItemStacks) in the GUI.
+//net.minecraft.item.ItemStack: Represents an item stack in Minecraft.
+//org.jetbrains.annotations.NotNull: Annotation indicating that a parameter, field, or method return value cannot be null.
+//Methods:
+
+//Drawing Shapes:
+
+//drawRect(float x, float y, float width, float height, int color): Draws a filled rectangle with the specified color.
+//drawRectOutline(int x, int y, int width, int height, float lineWidth, Color color): Draws an outlined rectangle with a specified line width and color.
+//drawCircle(int x, int y, int radius, Color color): Draws a filled circle.
+//drawCircleOutline(int x, int y, float radius, float thickness, Color color): Draws an outlined circle.
+//drawLine(float x1, float y1, float x2, float y2, float thickness, Color color): Draws a line segment between two points.
+//drawTriangle(int x, int y, int x2, int y2, int x3, int y3, Color color): Draws a filled triangle.
+//drawTriangleOutline(int x, int y, int x2, int y2, int x3, int y3, Color color): Draws an outlined triangle.
+//drawArc(int x, int y, int radius, int startAngle, int endAngle, Color color): Draws a filled arc of a circle.
+//drawLoadingCircle(float x, float y, float radius, float thickness, float speed, Color color): Draws a loading circle animation.
+//drawRoundedRect(int x, int y, int width, int height, int radius, @NotNull Color color): Draws a rounded rectangle with rounded corners.
+//drawGradientRect(int x, int y, int width, int height, Color color1, Color color2): Draws a gradient-filled rectangle.
+//Text Rendering:
+
+//Methods for rendering text:
+//drawString, drawStringWithShadow, drawCenteredString, drawCenteredStringWithShadow: Render text at specified positions with different styles and scales.
+//Item Rendering:
+
+//drawItemStack(ItemStack itemStack, int x, int y, float scale): Renders an ItemStack (an item icon) at a given position with scaling.
+//drawItemStackWithText(ItemStack stack, int x, int y, String text): Renders an ItemStack with an optional overlay text.
+//drawCenteredItemStack(ItemStack itemStack, int x, int y, float scale): Renders an ItemStack centered at a given position with scaling.
+//Miscellaneous:
+
+//drawCheckMark(int x, int y, int size, Color color): Draws a check mark shape.
+//drawCrossMark(int x, int y, int x2, int y2, Color color): Draws a cross mark shape.
+//setAlpha(Color color, int alpha): Sets the alpha transparency of a Color object.
+//setColor(int color) and setColor(Color color): Set the current drawing color using RGBA values.
+//rotate(float angle): Rotates subsequent drawing operations by a specified angle.
+//Usage
+//This class is typically used in Minecraft mods or plugins (like Forge mods) that require custom graphical user interfaces (GUIs) or visual elements.
+//It leverages LWJGL for OpenGL-based rendering directly onto the Minecraft game screen.
+//Methods like drawString, drawRect, drawItemStack are particularly useful for customizing UI elements or displaying information in-game.
+
+//Summary
+//RenderUtils encapsulates various OpenGL-based rendering methods tailored for Minecraft's GUI system. It provides convenient static methods to draw shapes, text, items, and more, making it easier to create custom UI elements and visual effects within the game environment.
